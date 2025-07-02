@@ -4,15 +4,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 1.5rem;
+  height: 70px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 70px;
 }
 
-.landing-navbar a {
+/* Brand */
+.landing-navbar .brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00d1ff;
+  text-decoration: none;
+}
+
+/* Links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.nav-links a {
   color: #fff;
   text-decoration: none;
   margin-left: 1rem;
@@ -20,21 +35,11 @@
   transition: color 0.3s;
 }
 
-.landing-navbar a:hover {
+.nav-links a:hover {
   color: #00d1ff;
 }
 
-.landing-navbar div {
-  display: flex;
-  align-items: center;
-}
-
-.landing-navbar .brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #00d1ff;
-  text-decoration: none;
-}
+/* Login Button */
 .login-btn {
   background-color: transparent;
   color: #fff;
@@ -44,10 +49,83 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-top: auto;
 }
 
 .login-btn:hover {
   background-color: #fff;
   color: #000;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background-color: #161b22;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 1rem;
+  }
+
+  .nav-links a,
+  .login-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+  }
+
+  .nav-links a:last-child,
+  .login-btn:last-child {
+    border-bottom: none;
+  }
 }
