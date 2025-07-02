@@ -6,6 +6,8 @@
   max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  
+ 
 }
 
 .report-title {
@@ -20,6 +22,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
+  
 }
 
 /* CARD STYLING */
@@ -30,7 +33,7 @@
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.1s;
-  box-sizing: border-box;
+  
 }
 
 .result-card:hover {
@@ -41,7 +44,6 @@
 .result-card h3 {
   color: #58a6ff;
   margin-bottom: 0.75rem;
-  font-size: 1.3rem;
 }
 
 .result-card p,
@@ -76,7 +78,6 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
-  flex-wrap: wrap;
 }
 
 .download-btn,
@@ -90,7 +91,6 @@
   font-weight: 600;
   transition: background-color 0.3s;
   text-decoration: none;
-  text-align: center;
 }
 
 .download-btn:hover,
@@ -102,14 +102,11 @@
 .result-card.performance {
   border-left: 3px solid #58a6ff;
   background-color: #0d1117;
-  grid-column: 1 / -1;
-  padding: 1rem;
-  box-sizing: border-box;
+   grid-column: 1 / -1;
 }
 
 .result-card.performance h3 {
   color: #58a6ff;
-  font-size: 1.4rem;
 }
 
 .result-card.performance p,
@@ -132,13 +129,6 @@
   border-collapse: collapse;
   margin-top: 1rem;
   font-size: 0.9rem;
-  overflow-x: auto;
-  display: block;
-}
-
-.perf-table table {
-  width: 100%;
-  min-width: 400px;
 }
 
 .perf-table th,
@@ -172,7 +162,6 @@
   max-height: 400px;
   margin-top: 0.5rem;
   font-size: 0.85rem;
-  box-sizing: border-box;
 }
 
 /* NO DATA PLACEHOLDER */
@@ -181,34 +170,9 @@
   font-style: italic;
 }
 
-/* RESPONSIVE TWEAKS */
-@media (max-width: 768px) {
-  .result-container {
-    padding: 1rem;
-  }
-
-  .report-title {
-    font-size: 1.5rem;
-  }
-
-  .result-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .result-card.performance {
-    grid-column: auto;
-    border-left: none;
-    border-top: 3px solid #58a6ff;
-  }
-
+/* RESPONSIVE BUTTONS */
+@media (max-width: 600px) {
   .button-row {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .download-btn,
-  .new-analysis-btn {
-    width: 100%;
-    max-width: 300px;
   }
 }
