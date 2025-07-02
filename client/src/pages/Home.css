@@ -9,7 +9,6 @@
   align-items: center;
   margin-top: 20px;
 
-  /* Super dark gradient with black, navy, and purple */
   background: linear-gradient(-45deg, #000000, #0a0f1c, #120d1f, #110a20, #330250);
   background-size: 400% 400%;
   animation: darkGradientShift 15s ease infinite;
@@ -51,18 +50,18 @@
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   max-width: 600px;
-  width: 590px;
-  height: 200px;
+  width: 90%;
+  box-sizing: border-box;
   text-align: center;
   margin: 2rem auto;
-  box-sizing: border-box;
   transform: translate(0, 20px);
 }
 
 /* Heading inside card */
 .analyze-form-card h2 {
-  color: #a78bfa; /* Soft purple accent */
+  color: #a78bfa;
   margin-bottom: 1rem;
+  font-size: 1.75rem;
 }
 
 /* Form layout */
@@ -82,11 +81,12 @@
   color: #d1d5db;
   width: 100%;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 /* Submit button */
 .analyze-form-card button {
-  background-color: #742cdf; /* Dark purple */
+  background-color: #742cdf;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -94,6 +94,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s;
+  font-size: 1rem;
 }
 
 .analyze-form-card button:hover {
@@ -105,6 +106,7 @@
   color: #f87171;
   margin-top: 0.5rem;
 }
+
 /* Progress bar container */
 .progress-bar-container {
   position: fixed;
@@ -123,4 +125,25 @@
   transition: width 0.3s ease;
 }
 
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .analyze-form-card {
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin: 1rem auto;
+    transform: none;
+  }
 
+  .analyze-form-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .analyze-form-card input {
+    font-size: 0.95rem;
+  }
+
+  .analyze-form-card button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
