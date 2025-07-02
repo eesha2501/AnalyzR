@@ -10,17 +10,19 @@ function Home() {
   const [progress, setProgress] = useState(0);
   const [showProgress, setShowProgress] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   useEffect(() => {
     let interval;
     if (loading) {
       setShowProgress(true);
       setProgress(0);
       interval = setInterval(() => {
-        setProgress(prev => {
-          if (prev < 90) return prev + 5; // Simulate loading up to 90%
+        setProgress((prev) => {
+          if (prev < 90) return prev + 2;
           return prev;
         });
-      }, 300);
+      }, 200);
     } else {
       clearInterval(interval);
     }
@@ -34,19 +36,24 @@ function Home() {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/analyze', {
+      const response = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
       });
+
+      if (!response.ok) {
+        throw new Error('Server error');
+      }
+
       const data = await response.json();
-      setProgress(100);  // Complete the bar
+      setProgress(100);
       setResult(data);
-    } catch {
-      setError('Error analyzing the URL.');
+    } catch (err) {
+      setError('Error analyzing the URL. Please check your server.');
     } finally {
       setLoading(false);
-      setTimeout(() => setShowProgress(false), 500);  // Hide after short delay
+      setTimeout(() => setShowProgress(false), 800);
     }
   };
 
@@ -56,7 +63,10 @@ function Home() {
 
       {showProgress && (
         <div className="progress-bar-container">
-          <div className="progress-bar" style={{ width: `${progress}%` }} />
+          <div
+            className="progress-bar"
+            style={{ width: `${progress}%` }}
+          />
         </div>
       )}
 
