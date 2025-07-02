@@ -8,7 +8,7 @@ export default function Feedback() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+ 
 
     emailjs.sendForm(
       'service_jteg0z5',     // Replace with EmailJS Service ID
