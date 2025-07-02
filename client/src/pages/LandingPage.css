@@ -1,0 +1,141 @@
+.landing-dark {
+  position: relative;
+  color: #c9d1d9;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Dark overlay on top of background image */
+.landing-dark::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.landing-dark > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+
+.hero-dark {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+
+}
+
+.hero-content-dark {
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+.hero-content-dark h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.highlight-dark {
+  color: #58a6ff;
+}
+
+.subhead-dark {
+  font-size: 1.2rem;
+  color: #8b949e;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.cta-btn-dark {
+  background: linear-gradient(135deg, #58a6ff, #238636);
+  color: white;
+  padding: 14px 32px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.cta-btn-dark:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.hero-image-dark {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hero-image-dark img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.features-dark {
+  padding: 60px 5%;
+  
+  text-align: center;
+}
+
+.features-dark h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #58a6ff;
+}
+
+.feature-grid-dark {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feature-card-dark {
+  background-color: #130d17;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.feature-card-dark h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #58a6ff;
+}
+
+.feature-card-dark p {
+  color: #8b949e;
+  font-size: 0.95rem;
+}
+
+.footer-dark {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #8b949e;
+  border-top: 1px solid #30363d;
+}

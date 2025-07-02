@@ -1,0 +1,124 @@
+/* Main layout container with animated dark gradient background */
+.home-wrapper {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  /* Super dark gradient with black, navy, and purple */
+  background: linear-gradient(-45deg, #000000, #0a0f1c, #120d1f, #110a20, #330250);
+  background-size: 400% 400%;
+  animation: darkGradientShift 15s ease infinite;
+
+  color: #d1d5db;
+  overflow-x: hidden;
+}
+
+/* Animated gradient movement */
+@keyframes darkGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Ensure all children are above the animated background */
+.home-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Vertically center the form when no result is shown */
+.home-wrapper.no-result {
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Analyze form card with dark semi-transparency */
+.analyze-form-card {
+  background-color: rgba(10, 15, 28, 0.85);
+  border: 1px solid #1b1035;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  width: 590px;
+  height: 200px;
+  text-align: center;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  transform: translate(0, 20px);
+}
+
+/* Heading inside card */
+.analyze-form-card h2 {
+  color: #a78bfa; /* Soft purple accent */
+  margin-bottom: 1rem;
+}
+
+/* Form layout */
+.analyze-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* URL input */
+.analyze-form-card input {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #1b1035;
+  background-color: #000000;
+  color: #d1d5db;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+.analyze-form-card button {
+  background-color: #742cdf; /* Dark purple */
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.analyze-form-card button:hover {
+  background-color: #5b21b6;
+}
+
+/* Error message */
+.error {
+  color: #f87171;
+  margin-top: 0.5rem;
+}
+/* Progress bar container */
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+/* Progress bar fill */
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4c1d95, #5b21b6, #7c3aed);
+  transition: width 0.3s ease;
+}

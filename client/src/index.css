@@ -1,0 +1,9 @@
+/* index.css */
+
+/* 1️⃣ Reset and normalize basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+

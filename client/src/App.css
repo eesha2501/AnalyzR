@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  color: #c9d1d9;
+}
+
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 500px; /* Sidebar width */
+  margin-top: 60px;   /* Navbar height */
+  padding: 2rem 1rem;
+  
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
