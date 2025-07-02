@@ -1,4 +1,4 @@
-/* CONTAINER & TITLE */
+/* Container */
 .result-container {
   background-color: #0d1117;
   color: #c9d1d9;
@@ -6,7 +6,6 @@
   max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
-  box-sizing: border-box;
 }
 
 .report-title {
@@ -16,45 +15,52 @@
   margin-bottom: 1rem;
 }
 
-/* GRID LAYOUT */
+/* Responsive Grid */
 .result-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  box-sizing: border-box;
 }
 
-/* CARD STYLING */
+/* Card */
 .result-card {
   background-color: #161b22;
   border: 1px solid #30363d;
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.1s;
   box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.1s;
+  font-size: 0.95rem;
 }
 
 .result-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
 .result-card h3 {
   color: #58a6ff;
   margin-bottom: 0.75rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+}
+
+.result-card h4 {
+  margin-top: 1rem;
+  color: #58a6ff;
+  font-size: 1rem;
 }
 
 .result-card p,
 .result-card li {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: inherit;
+  line-height: 1.4;
 }
 
 .result-card ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .result-card ul li::before {
@@ -62,23 +68,34 @@
   color: #238636;
 }
 
-/* RECOMMENDATION */
-.recommendation {
-  background-color: #0d1117;
+/* Recommendation box special style */
+.result-card.recommendation {
   border-left: 3px solid #238636;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #8b949e;
+  background-color: #0d1117;
 }
 
-/* BUTTONS */
+/* Performance card */
+.result-card.performance {
+  border-left: 3px solid #58a6ff;
+  background-color: #0d1117;
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .result-card.performance {
+    grid-column: auto;
+    border-left: none;
+    border-top: 3px solid #58a6ff;
+  }
+}
+
+/* Buttons Row */
 .button-row {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .download-btn,
@@ -92,7 +109,6 @@
   font-weight: 600;
   transition: background-color 0.3s;
   text-decoration: none;
-  text-align: center;
 }
 
 .download-btn:hover,
@@ -100,35 +116,20 @@
   background-color: #2ea043;
 }
 
-/* PERFORMANCE / PAGESPEED SECTION */
-.result-card.performance {
-  border-left: 3px solid #58a6ff;
-  background-color: #0d1117;
-  grid-column: 1 / -1;
-  padding: 1rem;
-  box-sizing: border-box;
+@media (max-width: 600px) {
+  .button-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-btn,
+  .new-analysis-btn {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
-.result-card.performance h3 {
-  color: #58a6ff;
-  font-size: 1.4rem;
-}
-
-.result-card.performance p,
-.result-card.performance li {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #c9d1d9;
-}
-
-/* PLATFORM SECTION HEADINGS */
-.platform-section h4 {
-  margin-top: 1rem;
-  color: #58a6ff;
-  font-size: 1rem;
-}
-
-/* AUDIT TABLE */
+/* Table for audits */
 .perf-table {
   width: 100%;
   border-collapse: collapse;
@@ -136,11 +137,6 @@
   font-size: 0.9rem;
   overflow-x: auto;
   display: block;
-}
-
-.perf-table table {
-  width: 100%;
-  min-width: 400px;
 }
 
 .perf-table th,
@@ -164,7 +160,7 @@
   background-color: #161b22;
 }
 
-/* JSON BLOCK DISPLAY */
+/* JSON Block */
 .json-block {
   background: #161b22;
   color: #c9d1d9;
@@ -174,74 +170,59 @@
   max-height: 400px;
   margin-top: 0.5rem;
   font-size: 0.85rem;
-  box-sizing: border-box;
 }
 
-/* NO DATA PLACEHOLDER */
-.no-data {
-  color: #8b949e;
-  font-style: italic;
-}
-
-/* RESPONSIVE TWEAKS */
 @media (max-width: 768px) {
-  .report-title {
-    font-size: 1.6rem;
-  }
-
-  .result-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .result-card {
-    padding: 0.75rem;
-  }
-
-  .result-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .result-card.performance {
-    grid-column: auto;
-    border-left: none;
-    border-top: 3px solid #58a6ff;
-  }
-
-  .button-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .download-btn,
-  .new-analysis-btn {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .perf-table {
-    font-size: 0.85rem;
-  }
-
   .json-block {
     font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
+  .json-block {
+    font-size: 0.75rem;
+  }
+}
+
+/* No data message */
+.no-data {
+  color: #8b949e;
+  font-style: italic;
+}
+
+/* Make sure performance section headings adjust on mobile */
+.platform-section h4 {
+  margin-top: 1rem;
+  color: #58a6ff;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .result-container {
+    padding: 1rem 0.5rem;
+  }
+
   .report-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .result-card {
+    padding: 0.75rem;
+    font-size: 0.9rem;
   }
 
   .result-card h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-card {
+    padding: 0.5rem;
+    font-size: 0.85rem;
   }
 
-  .button-row {
-    gap: 0.5rem;
-  }
-
-  .download-btn,
-  .new-analysis-btn {
-    padding: 0.6rem 1rem;
+  .result-card h3 {
+    font-size: 1.1rem;
   }
 }
