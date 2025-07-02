@@ -26,7 +26,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <img src={logo} alt="AnalyzR Logo" className="navbar-logo" />
-        <span className="brand">AnalyzR</span>
+        
       </div>
 
       <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
