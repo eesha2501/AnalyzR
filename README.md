@@ -1,7 +1,7 @@
 # AnalyzR
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/eesha2501/AnalyzR/main.yml?branch=main)]()
+[![Build Status](https://analyzr-web.vercel.app/)]()
 
 AnalyzR is a website analyzer that checks basic SEO and suggests code changes.
 
@@ -74,6 +74,3 @@ Please make sure to update tests as appropriate.
 
 Distributed under the MIT License. See `LICENSE` file for more information.
 
-## Contact
-
-Your Name - [AnalyzR](https://github.com/eesha2501/AnalyzR) - email@example.com
